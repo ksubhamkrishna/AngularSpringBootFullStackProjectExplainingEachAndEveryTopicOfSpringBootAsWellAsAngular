@@ -1,0 +1,27 @@
+<div class="row">
+
+
+    <div class="col-3">
+
+        @if(div1Visible==true){
+        <div class="bg-success p-3">
+            Div 1
+        </div>
+        }
+
+    </div>
+
+    <div class="col-3">
+
+        <div class="bg-primary p-3">
+            Div 2
+        </div>
+
+    </div>
+
+    <div class="col-3 p-3">
+        <button class="btn btn-success" (click)="showDiv1(true)">Show</button>
+        <button class="btn btn-danger" (click)="showDiv1(false)">Hide</button>
+    </div>
+
+</div>

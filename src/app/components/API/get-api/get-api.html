@@ -1,0 +1,31 @@
+<h2>GET API</h2>
+
+<div class="row">
+    <div class="col-3">
+        <button type="button" class="btn btn-success" (click)="getUsers()">Load Users</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(items of userList;track items.id){
+                <tr>
+                    <td>{{items.id}}</td>
+                    <td>{{items.name}}</td>
+                    <td>{{items.email}}</td>
+                </tr> }
+
+            </tbody>
+        </table>
+    </div>
+</div>

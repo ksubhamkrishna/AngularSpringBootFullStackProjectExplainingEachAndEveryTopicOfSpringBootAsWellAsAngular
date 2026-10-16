@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>User Form</h2>
+    <form #form="ngForm">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Email <span class="text-danger">*</span></label>
+                <input type="email" name="email" #fEmail="ngModel" required [(ngModel)]="userObj.email"
+                    class="form-control">
+                <div class="text-danger">
+                    @if(fEmail.errors?.['required'] && fEmail.touched){
+                    <span>This is required</span>
+                    }
+
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Password</label>
+                <input type="password" name="password" #fPassword="ngModel" required minlength="4"
+                    [(ngModel)]="userObj.password" class="form-control">
+            </div>
+            <div class="text-danger">
+                <span *ngIf="fPassword.errors?.['required'] && fPassword.touched">This is Required</span>
+                <span *ngIf="fPassword.errors?.['minlength']">Minimum 4 Characters Required</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" name="address" [(ngModel)]="userObj.address" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Address 2</label>
+            <input type="text" name="address2" [(ngModel)]="userObj.address2" class="form-control">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>City</label>
+                <input type="text" name="city" [(ngModel)]="userObj.city" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>State</label>
+                <select class="form-control" name="state" [(ngModel)]="userObj.state">
+                    <option selected>Choose...</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Punjab">Punjab</option>
+
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label>Zip</label>
+                <input type="text" name="zip" [(ngModel)]="userObj.zip" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="agreeToTermsAndConditions"
+                    [(ngModel)]="userObj.agreeToTermsAndConditions">
+                <label class="form-check-label">
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="onSave()">Submit Form</button>
+    </form>
+</div>

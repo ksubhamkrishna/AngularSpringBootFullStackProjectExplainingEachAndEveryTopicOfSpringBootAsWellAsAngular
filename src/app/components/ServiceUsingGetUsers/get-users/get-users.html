@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <h2>Post API Implementation using Template Form</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <button type="button" class="btn btn-success" (click)="getUsers()">
+            Get All Users
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <!-- <th>Edit User</th>
+                    <th>Delete User</th> -->
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(items of userArray;track items.id){
+                <tr>
+                    <td>{{items.id}}</td>
+                    <td>{{items.name}}</td>
+                    <td>{{items.email}}</td>
+                    <!-- <td><button type="button" class="btn btn-success" (click)="onEdit(items)">Edit Users</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="onDeletecall(items.id)">Delete Users</button></td> -->
+
+                </tr> }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-5">
+        <form #form="ngForm">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h5>Create New User</h5>
+                </div>
+                <div class="col-6 mt-2">
+                    <label>Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="name" #fName="ngModel" [(ngModel)]="userObj.name"
+                        required>
+                    <div>
+                        @if(fName.errors?.['required'] && fName.touched){
+                        <span class="text-danger">This is Required</span>
+                        }
+                    </div>
+                </div>
+                <div class="col-6 mt-2">
+                    <label>Email<span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" name="email" #fEmail="ngModel"
+                        [(ngModel)]="userObj.email" required>
+                    <div>
+                        @if(fEmail.errors?.['required'] && fEmail.touched){
+                        <span class="text-danger">This is Required</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mt-2 text-center">
+
+                    <button type="button" class="btn btn-success m-2" [disabled]="form.invalid" (click)="onSave()">Save
+                        User</button>
+
+
+                    {{userObj.id}}
+                </div>
+            </div>
+        </form>
+    </div>

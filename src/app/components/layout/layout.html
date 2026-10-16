@@ -1,0 +1,164 @@
+<h1>Angular 19</h1>
+<!-- <app-data-binding></app-data-binding>
+<app-ng-if></app-ng-if>
+<app-ng-for></app-ng-for> 
+<app-ng-class></app-ng-class>
+<app-ng-style></app-ng-style>
+<app-control-statement></app-control-statement>
+<app-form-and-validation></app-form-and-validation> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" routerLink="/after-login-admin/dataBinding">Data Binding</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+
+            <ul class="navbar-nav me-auto">
+
+                <!-- Admin -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/after-login-admin/admin">Admin</a>
+                </li>
+
+                <!-- Ng-Class -->
+                <li class="nav-item dropdown">
+
+                    <!-- Dropdown trigger: no routerLink here -->
+                    <a class="nav-link dropdown-toggle" href="#" id="signalsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        NgClass,NgFor,NgIf
+                    </a>
+
+                    <!-- Dropdown items -->
+                    <ul class="dropdown-menu" aria-labelledby="signalsDropdown">
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/ng-class">
+                                NgClass
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/ng-for">
+                                NgFor(NgPipe)
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/ng-if">
+                                NgIf
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <!-- Signal dropdown adjacent to Ng-Class -->
+                <li class="nav-item dropdown">
+
+                    <!-- Dropdown trigger: no routerLink here -->
+                    <a class="nav-link dropdown-toggle" href="#" id="signalsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Signals
+                    </a>
+
+                    <!-- Dropdown items -->
+                    <ul class="dropdown-menu" aria-labelledby="signalsDropdown">
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/signal">
+                                Signal
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/linkedSignal">
+                                Linked Signal
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <!-- Dropdown trigger: no routerLink here -->
+                    <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Forms
+                    </a>
+
+                    <!-- Dropdown items -->
+                    <ul class="dropdown-menu" aria-labelledby="formsDropdown">
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/templateForm">
+                                TemplateForm
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/reactiveForm">
+                                Reactive Form
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <!-- Dropdown trigger: no routerLink here -->
+                    <a class="nav-link dropdown-toggle" href="#" id="ApiDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Api Calls
+                    </a>
+
+                    <!-- Dropdown items -->
+                    <ul class="dropdown-menu" aria-labelledby="ApisDropdown">
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/getApi-call">
+                                Get Api call
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" routerLink="/after-login-admin/postApi">
+                                Post Api Call
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/after-login-admin/resource-api">Resource Api</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/after-login-admin/life-cycle">LifeCycle</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/after-login-admin/getUsersThroughService">Get-User-Data-ThroughService</a>
+                </li>
+
+            </ul>
+
+            <!-- Search bar on the right -->
+            <form class="d-flex" role="search">
+                <button class="btn btn-success" (click)="onLogoff()" type="submit" type="button">
+                    LogOff
+                </button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

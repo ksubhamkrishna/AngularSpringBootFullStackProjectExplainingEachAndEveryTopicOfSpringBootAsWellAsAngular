@@ -1,0 +1,58 @@
+<!-- <button class="btn btn-primary" routerLink="/admin">Go To Admin</button> -->
+<!-- or using .ts by using click event: -->
+
+<button class="btn btn-primary" (click)="navigatetoAdmin()">Go To Admin</button>
+
+
+<p>data-binding works!</p>
+<div class="row">
+    <div class="col-6">
+        1. Interpolation
+        <p>First Name => {{firstName}}</p>
+        <div>{{rollNo}}</div>
+    </div>
+
+    <div class="col-6">
+        2. Property Binding
+        <div>
+            <input type="text" [value]="firstName" name="" id="">
+            <br>
+            <input type="text" [placeholder]="myPlaceHolder" name="" id="">
+            <br>
+            <div [class]="div1ClassName" style="height: 100px; width: 100px;"> </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    3. Event Binding
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeMessage()">Show Welcome Text</button>
+    </div>
+
+    <div class="col-3">
+        <select (change)="onCityChanges()">
+            <option value="Pune">Pune</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Panji">Panji</option>
+        </select>
+    </div>
+</div>
+<div class="col-3">
+    <br>
+    <br>
+    Two Way Data Binding
+    <input type="text" [(ngModel)]="firstName">
+    <div class="col-3">
+
+        <select [(ngModel)]="selectedCity">
+            <option value="Pune">Pune</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Panji">Panji</option>
+        </select>
+        -{{selectedCity}}
+    </div>
+
+
+</div>
